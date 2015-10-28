@@ -1,7 +1,5 @@
 function abbreviate(string) {
-  var match = string.match(/\w{4,}/gi);
-  if(match !== null) match.forEach(function(matcher) { 
-    string = string.replace(matcher.slice(1, matcher.length - 1), matcher.substr(1, matcher.length - 2).length) 
+  return string.replace(/\w{4,}/gi, function(match) {
+    return match.replace(match.slice(1, match.length - 1), match.length - 2);
   });
-  return string;
 }
